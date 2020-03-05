@@ -1,0 +1,229 @@
+:not(.home) .remodal-overlay {
+  background: rgba(0, 0, 0, 0.4);
+
+  &.remodal-is-opening,
+  &.remodal-is-closing {
+    animation-fill-mode: forwards;
+  }
+
+  &.remodal-is-opening {
+    animation: remodal-overlay-opening-keyframes 0.3s;
+  }
+
+  &.remodal-is-closing {
+    animation: remodal-overlay-closing-keyframes 0.3s;
+  }
+}
+
+.home .remodal-overlay {
+  &.remodal-is-opening {
+    animation: remodal-overlay-opening-keyframes 0.5s;
+  }
+
+  &.remodal-is-closing {
+    animation: remodal-overlay-closing-keyframes 0.5s;
+  }
+}
+
+.remodal-wrapper {
+  padding: 10px 10px 0;
+}
+
+.remodal {
+  box-sizing: border-box;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  transform: translate3d(0, 0, 0);
+
+  &.remodal-is-opening,
+  &.remodal-is-closing {
+    animation-fill-mode: forwards;
+  }
+
+  &.remodal-is-opening {
+    animation: remodal-opening-keyframes 0.3s;
+  }
+
+  &.remodal-is-closing {
+    animation: remodal-closing-keyframes 0.3s;
+  }
+}
+
+.video {
+  width: 80%;
+  max-width: 960px;
+  height: auto;
+
+  &.remodal-is-opening {
+    animation: remodal-opening-keyframes 0.5s;
+  }
+
+  &.remodal-is-closing {
+    animation: remodal-closing-keyframes 0.5s;
+  }
+
+  .remodal-close {
+    right: 12px;
+    z-index: 1;
+    color: #fff;
+
+    @media screen and (max-width: 40em) {
+      top: 2px;
+      right: 8px;
+    }
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media screen and (max-width: 40em) {
+    width: 95%;
+  }
+}
+
+.remodal:not(.video) {
+  width: 455px;
+  padding: 15px;
+  margin-bottom: 25em;
+  color: inherit;
+  background: #fff;
+  border-radius: 5px;
+
+  .form {
+    margin-bottom: 0.8rem;
+  }
+}
+
+.remodal,
+.remodal-wrapper::after {
+  vertical-align: middle;
+}
+
+.remodal-close {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  display: block;
+  padding: 10px;
+  overflow: visible;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  opacity: 0.25;
+  transition: color 0.2s;
+}
+
+.remodal-header {
+  padding: 15.5px;
+  margin: -15px -15px 15px;
+  font-size: 18px;
+  font-weight: normal;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.remodal-description {
+  height: 5rem;
+}
+
+.remodal-warning {
+  padding: 10px 15px;
+  margin: -16px -15px 15px;
+  color: #796620;
+  background-color: #f8eec7;
+  border-color: #f2e09a;
+  border-style: solid;
+  border-width: 1px 0;
+}
+
+.remodal-close:hover,
+.remodal-close:focus {
+  opacity: 1;
+}
+
+.remodal-close::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 35px;
+  font-size: 25px;
+  line-height: 35px;
+  text-align: center;
+}
+
+/* Remove inner padding and border in Firefox 4+ for the button tag. */
+
+.remodal-confirm::-moz-focus-inner,
+.remodal-cancel::-moz-focus-inner,
+.remodal-close::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+@keyframes remodal-opening-keyframes {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes remodal-closing-keyframes {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes remodal-overlay-opening-keyframes {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes remodal-overlay-closing-keyframes {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.lt-ie9 .remodal-overlay {
+  background: #999;
+}
+
+.lt-ie9 .remodal {
+  width: 455px;
+}

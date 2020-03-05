@@ -1,0 +1,64 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'script/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+
+Rails:
+  Enabled: true
+
+TrailingBlankLines:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'config/routes.rb'
+    - 'config/environments/*.rb'
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Rails/DynamicFindBy:
+  Whitelist:
+    - find_by_auth_hash
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - staging
+    - production
+
+Style/FileName:
+  Exclude:
+    - 'Gemfile'
+    - 'Guardfile'
+    - 'Brewfile'
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation

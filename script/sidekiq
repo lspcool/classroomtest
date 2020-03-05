@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+# Run the sidekiq background job
+./bin/sidekiq -C config/sidekiq.yml

@@ -1,0 +1,15 @@
+.message-of-the-day {
+  color: #fff;
+  background-color: $blue;
+
+  a {
+    font-weight: bold;
+    color: $blue-600;
+  }
+
+  .container-lg {
+    p {
+      margin: 0;
+    }
+  }
+}

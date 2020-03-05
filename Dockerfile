@@ -54,4 +54,4 @@ RUN apt-get update -qq
 RUN apt-get install dos2unix
 RUN find ./ -type f -exec dos2unix -q {} \;
 
-CMD ["bin/puma", "-C", "config/puma.rb"]
+CMD ["sh", "-c", "bin/puma -C config/puma.rb && bundle exec rake db:migrate"]

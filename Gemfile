@@ -18,7 +18,7 @@ gem "bootsnap", "~> 1.4", ">= 1.4.4", require: false
 
 gem "connection_pool", "~> 2.2", ">= 2.2.1"
 
-gem "dalli", "~> 2.7", ">= 2.7.6"
+gem "dalli", "~> 3.2"
 
 gem "failbot_rails",      "~> 0.5.0"
 gem "faraday-http-cache", "~> 2.0"
